@@ -2,44 +2,20 @@ import { motion } from 'framer-motion'
 
 const experiences = [
   {
-    title: 'Senior Photographer & Creative Director',
-    company: 'National Geographic',
-    location: 'Washington D.C.',
-    period: '2020 — Present',
-    description: 'Leading visual storytelling projects across five continents. Responsible for conceptualizing and executing long-form documentary series, managing a team of 8 photographers, and establishing visual guidelines for flagship publications.',
-    skills: ['Documentary Photography', 'Team Leadership', 'Art Direction', 'Visual Storytelling', 'Project Management'],
+    title: 'Video Editor & Graphic Designer',
+    company: 'Freelance',
+    location: 'Remote',
+    period: '2026 — Present',
+    description: 'Editing a full library of kids\' educational videos — nursery rhymes, phonics lessons and Urdu alphabet series — for YouTube channels. Alongside the edits, I design the logos, thumbnails and social graphics that carry each release.',
+    skills: ['Video Editing', 'Kids\' Educational Content', 'Color Grading', 'Sound Design', 'Thumbnails', 'Logo & Branding'],
   },
   {
-    title: 'Staff Photographer',
-    company: 'The New York Times',
-    location: 'New York, NY',
-    period: '2018 — 2020',
-    description: 'Covered breaking news, features, and editorial assignments for print and digital platforms. Specialized in portrait photography and human interest stories. Work featured on front page 47 times.',
-    skills: ['Editorial Photography', 'Breaking News', 'Portrait Photography', 'Deadline Management', 'Photo Editing'],
-  },
-  {
-    title: 'Creative Director',
-    company: 'Time Magazine',
-    location: 'New York, NY',
-    period: '2016 — 2018',
-    description: 'Oversaw visual direction for special issues and cover stories. Collaborated with editors to develop compelling visual narratives. Managed relationships with contributing photographers worldwide.',
-    skills: ['Creative Direction', 'Visual Strategy', 'Team Coordination', 'Brand Identity', 'Magazine Publishing'],
-  },
-  {
-    title: 'Staff Photographer',
-    company: 'VII Photo Agency',
-    location: 'Berlin, Germany',
-    period: '2014 — 2016',
-    description: 'Worked on long-term documentary projects focusing on social issues and human rights. Assignments included coverage in conflict zones and humanitarian crises across Europe and Middle East.',
-    skills: ['Documentary', 'Conflict Photography', 'Humanitarian Coverage', 'Long-form Projects', 'Risk Assessment'],
-  },
-  {
-    title: 'Junior Photographer',
-    company: 'Magnum Photos',
-    location: 'London, UK',
-    period: '2012 — 2014',
-    description: 'Assisted senior photographers on international assignments. Developed technical skills in both digital and analog photography. First solo exhibition at the agency gallery in 2013.',
-    skills: ['Analog Photography', 'Digital Processing', 'Studio Lighting', 'Archive Management', 'Exhibition Curation'],
+    title: 'Digital Marketing Expert',
+    company: 'Beasyai',
+    location: 'Remote',
+    period: '2026 — Present',
+    description: 'Planning and producing content built for reach — designing campaign graphics, shaping social media strategy and tracking what actually performs. The marketing lens keeps every edit I make focused on holding attention.',
+    skills: ['Digital Marketing', 'Content Strategy', 'Social Media', 'Campaign Graphics', 'Analytics'],
   },
 ]
 
@@ -52,7 +28,7 @@ const fadeInUp = {
 
 export function Work() {
   return (
-    <section id="work" className="section-padding">
+    <section id="experience" className="section-padding">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <motion.div {...fadeInUp} className="mb-16">

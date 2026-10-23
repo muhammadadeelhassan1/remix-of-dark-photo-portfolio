@@ -7,15 +7,13 @@ const navItems = [
   { id: 'about', label: 'About' },
   { id: 'skills', label: 'Skills' },
   { id: 'work', label: 'Work' },
-  { id: 'education', label: 'Education' },
-  { id: 'writing', label: 'Writing' },
-  { id: 'speaking', label: 'Speaking' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'contact', label: 'Contact' },
 ]
 
 const socialLinks = [
-  { label: 'Mail', href: 'mailto:bruce@banner.com' },
-  { label: 'Instagram', href: 'https://instagram.com' },
-  { label: 'Vimeo', href: 'https://vimeo.com' },
+  { label: 'Mail', href: 'mailto:naeembscs786@gmail.com' },
+  { label: 'Phone', href: 'tel:03260983142' },
 ]
 
 export function Navigation() {
@@ -73,8 +71,6 @@ export function Navigation() {
             <a
               key={link.label}
               href={link.href}
-              target={link.href.startsWith('mailto') ? undefined : '_blank'}
-              rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
               className="text-sm text-white mix-blend-difference hover:opacity-60 transition-opacity"
             >
               {link.label}
@@ -90,8 +86,6 @@ export function Navigation() {
             <a
               key={link.label}
               href={link.href}
-              target={link.href.startsWith('mailto') ? undefined : '_blank'}
-              rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
               className="text-sm text-white mix-blend-difference hover:opacity-60 transition-opacity"
             >
               {link.label}
@@ -101,7 +95,7 @@ export function Navigation() {
       </div>
 
       {/* Desktop Navigation Items - Fixed Bottom Right (hidden on mobile) */}
-      <nav 
+      <nav
         className={cn(
           'hidden md:block fixed bottom-0 right-0 z-50 p-6 md:p-10 transition-all duration-500',
           isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8 pointer-events-none'

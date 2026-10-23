@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const sections = ['about', 'skills', 'work', 'education', 'writing', 'speaking', 'contact']
+const sections = ['about', 'skills', 'work', 'experience', 'contact']
 
 export function useActiveSection() {
   const [activeSection, setActiveSection] = useState<string>('about')
@@ -37,4 +37,3 @@ export function useActiveSection() {
 
   return activeSection
 }
-

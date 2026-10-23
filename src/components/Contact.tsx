@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 
 const contacts = [
-  { label: 'UNITED STATES', type: 'location', link: '#' },
-  { label: 'UNITED KINGDOM', type: 'location', link: '#' },
+  { label: 'EMAIL', type: 'email', link: 'mailto:naeembscs786@gmail.com' },
+  { label: 'PHONE', type: 'phone', link: 'tel:03260983142' },
 ]
 
 const fadeInUp = {
@@ -44,12 +44,12 @@ export function Contact() {
           className="mb-12 lg:mb-16 max-w-2xl"
         >
           <h3 className="text-xl md:text-2xl lg:text-3xl text-white font-light leading-tight mb-4">
-            I'M NOTORIOUSLY<br />
-            SLOW AT GETTING<br />
-            BACK TO EMAILS
+            HAVE A VIDEO<br />
+            OR A BRAND<br />
+            TO BUILD?
           </h3>
           <p className="text-sm text-gray-500 tracking-widest uppercase">
-            IN A HURRY? PLEASE CONTACT MY AWESOME PRODUCERS
+            I REPLY FASTER THAN MY TURNAROUND — USUALLY WITHIN A DAY
           </p>
         </motion.div>
 
@@ -86,26 +86,16 @@ export function Contact() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 md:gap-16">
             <a
-              href="mailto:bruce@banner.photography"
-              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4"
+              href="mailto:naeembscs786@gmail.com"
+              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4 break-all"
             >
-              bruce@banner.photography
+              naeembscs786@gmail.com
             </a>
             <a
-              href="https://instagram.com/brucebanner"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="tel:03260983142"
               className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4"
             >
-              Instagram
-            </a>
-            <a
-              href="https://vimeo.com/brucebanner"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4"
-            >
-              Vimeo
+              0326 0983142
             </a>
           </div>
         </motion.div>
@@ -116,10 +106,10 @@ export function Contact() {
           className="mt-24 lg:mt-32 pt-8 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="text-xs text-gray-600">
-            © {new Date().getFullYear()} Bruce Banner Photography. All rights reserved.
+            © {new Date().getFullYear()} Naeem Khan. All rights reserved.
           </p>
           <p className="text-xs text-gray-600">
-            New York / London
+            Video Editor &amp; Graphic Designer
           </p>
         </motion.footer>
       </div>

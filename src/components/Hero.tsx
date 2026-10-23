@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import heroImage from '@/assets/hero.jpg'
 
 export function Hero() {
   return (
@@ -6,8 +7,8 @@ export function Hero() {
       {/* Background Image - Responsive */}
       <div className="absolute inset-0 w-full h-full">
         <img
-          src="/hero-image.jpg"
-          alt="Bruce Banner"
+          src={heroImage}
+          alt="Naeem Khan — video editing studio"
           className="w-full h-full object-cover object-center"
         />
         {/* Dark overlay for better text readability */}
@@ -24,18 +25,22 @@ export function Hero() {
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <h1 className="font-display leading-none tracking-tighter text-[15vw] sm:text-[12vw] md:text-hero">
-              <span className="block text-white">BRUCE</span>
-              <span className="block text-white">BANNER</span>
-              <span className="block text-white">PHOTOGRAPHY</span>
+              <span className="block text-white">NAEEM</span>
+              <span className="block text-white">KHAN</span>
             </h1>
-            
+            <p className="font-display text-white/90 text-2xl sm:text-3xl md:text-4xl mt-2 tracking-wide">
+              VIDEO EDITOR <span className="text-gray-400">&amp;</span> GRAPHIC DESIGNER
+            </p>
+
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
               className="mt-6 md:mt-8 text-sm sm:text-base text-white/80 max-w-sm md:max-w-md leading-relaxed"
             >
-              Bruce was named in Aperture Magazine's prestigious "Visual 100" list, as one of the Ten Most Compelling Photographers in 2023.
+              I cut and design stories that move — kids' rhymes, phonics and
+              educational videos, plus the graphics and social content that
+              carry them.
             </motion.p>
           </motion.div>
         </div>

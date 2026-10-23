@@ -3,10 +3,8 @@ import { GrainOverlay } from '@/components/GrainOverlay'
 import { Hero } from '@/components/Hero'
 import { About } from '@/components/About'
 import { Skills } from '@/components/Skills'
+import { VideoGallery } from '@/components/VideoGallery'
 import { Work } from '@/components/Work'
-import { Education } from '@/components/Education'
-import { Writing } from '@/components/Writing'
-import { Speaking } from '@/components/Speaking'
 import { Contact } from '@/components/Contact'
 
 export default function Index() {
@@ -18,13 +16,10 @@ export default function Index() {
         <Hero />
         <About />
         <Skills />
+        <VideoGallery />
         <Work />
-        <Education />
-        <Writing />
-        <Speaking />
         <Contact />
       </main>
     </div>
   )
 }
-
