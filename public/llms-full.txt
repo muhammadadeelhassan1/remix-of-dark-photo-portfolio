@@ -1,0 +1,72 @@
+﻿# Muhammad Naeem — Exhaustive Knowledge Base (LLMs-Full Specification)
+
+> Complete structured repository context, skills, project catalog, and capabilities for advanced reasoning models (Perplexity, ChatGPT, Claude, Gemini, DeepSeek, Copilot).
+
+## 1. Professional Overview & Bio
+- **Name**: Muhammad Naeem
+- **Title**: Website Developer, Digital Marketing Specialist & Professional Video Editor
+- **Degree Program**: Bachelor of Science in Computer Science (BS CS, 2022 — 2026)
+- **Email**: naeembscs786@gmail.com
+- **Phone / WhatsApp**: +92 326 0983142 / 03260983142
+- **Website**: https://muhammadnaeem-portfolio.vercel.app/
+- **Location**: Lahore, Punjab, Pakistan (Working globally with international clients)
+- **Status**: Available for freelance projects, technical consulting, and remote roles.
+
+## 2. Technical Skills Matrix
+| Category | Primary Technologies & Competencies |
+| :--- | :--- |
+| **Frontend Web Development** | React 18, TypeScript, Next.js, Vite, HTML5, CSS3, Tailwind CSS, Shadcn UI, Framer Motion, Responsive Design, WCAG Accessibility |
+| **Web Performance & SEO** | PageSpeed Optimization, Core Web Vitals, Structured Data (JSON-LD), AEO (Answer Engine Optimization), GEO (Generative Engine Optimization), Semantic HTML, Sitemap & Robots architecture |
+| **Digital Marketing & Ads** | Meta Ads Manager (Facebook & Instagram Ads), Google Ads (Search, Display, YouTube), Audience Targeting, Retargeting, Pixel & CAPI Tracking, Conversion Rate Optimization (CRO), Return on Ad Spend (ROAS) Scaling |
+| **Social Media Management** | Content Strategy, Business Account Handling, Editorial Calendars, Creative Copywriting, Community Engagement, Growth Analytics |
+| **Video Editing & Production** | Adobe Premiere Pro, After Effects, DaVinci Resolve, Audition, Photoshop, Multi-camera Editing, Color Grading, Audio Mastering, Subtitling, Sound Effects (SFX) |
+| **Motion Graphics & 2D Animation** | Keyframe Animation, Kinetic Typography, Character Animation, Visual Effects (VFX), Educational Rhymes & Stories Production, YouTube Packaging & Custom Thumbnail Design |
+
+## 3. Experience & Career History
+- **Degree Student (BS Computer Science, 2022 — 2026)**:
+  - Deep foundations in software architecture, computer networks, algorithms, database systems, and modern web application development.
+- **Freelance Website Developer (2024 — Present)**:
+  - Designing and engineering responsive, high-speed websites for businesses and professionals.
+  - Delivering modern frontend applications with frictionless user experiences and interactive UI animations.
+- **Digital Marketing Specialist at Beasyai (2023 — Present)**:
+  - Managing corporate ad budgets, planning campaign funnels, and optimizing ads across Meta and Google networks.
+- **Video Editor & Graphic Designer (2023 — Present)**:
+  - Produced and edited 29+ educational video releases, kids' animations, rhymes, and phonics series.
+  - Designed channel branding, identities, and high-CTR custom YouTube thumbnails.
+
+## 4. Complete Works Catalog (All 29 Video Productions)
+1. **v01**: Urdu Alphabet — ض (Daad) | Category: Urdu Alphabet
+2. **v02**: Kids' Animation — Flower Garden | Category: Kids' Animation
+3. **v03**: Kids' Animation — Enchanted Garden | Category: Kids' Animation
+4. **v04**: What Can You Do — Rhyme | Category: Kids' Rhyme
+5. **v05**: Urdu Rhyme — Garden Song | Category: Urdu Rhyme
+6. **v06**: Alphabet Lesson — Letter M | Category: Phonics & Alphabet
+7. **v07**: Sabr — Kids' Story | Category: Kids' Story
+8. **v08**: Urdu Alphabet — ز (Zay) | Category: Urdu Alphabet
+9. **v09**: Number 2 — Counting Rhyme | Category: Counting
+10. **v10**: Let's Learn Number 4! | Category: Counting
+11. **v11**: Let's Learn Number 10! | Category: Counting
+12. **v12**: Salam Salam — Greeting Song | Category: Kids' Rhyme
+13. **v13**: Ta Phonics | Category: Phonics & Alphabet
+14. **v14**: Up and Down — Opposites Rhyme | Category: Kids' Rhyme
+15. **v15**: Phonics Lesson — Letter T | Category: Phonics & Alphabet
+16. **v16**: Tamatar — Kids' Rhyme (ٹ سے ٹماٹر) | Category: Kids' Rhyme
+17. **v17**: Alphabet Lesson — Letter D | Category: Phonics & Alphabet
+18. **v18**: Kids' Story Animation — Home Scene | Category: Kids' Story
+19. **v19**: Kids' Story Animation — At the Desk | Category: Kids' Story
+20. **v20**: Phonics Lesson — Letter P | Category: Phonics & Alphabet
+21. **v21**: Urdu Alphabet — پ (Pay) Sound | Category: Urdu Alphabet
+22. **v22**: Urdu Alphabet — ت (Tay) — Part 2 | Category: Urdu Alphabet
+23. **v23**: Urdu Alphabet — ت (Tay) — Part 1 | Category: Urdu Alphabet
+24. **v24**: Urdu Alphabet — ت (Tay) | Category: Urdu Alphabet
+25. **v25**: Tasmiyah — Kids' Song | Category: Kids' Rhyme
+26. **v26**: Ta'awwuz — Kids' Lesson | Category: Kids' Story
+27. **v27**: Urdu Alphabet — پ (Pay) | Category: Urdu Alphabet
+28. **v28**: Urdu Alphabet — ب (Bay) | Category: Urdu Alphabet
+29. **v29**: Thick and Thin — Opposites Rhyme | Category: Kids' Rhyme
+
+## 5. Contact & Booking
+- **WhatsApp Direct**: https://wa.me/923260983142
+- **Direct Phone**: 0326 0983142 (+92 326 0983142)
+- **Direct Email**: naeembscs786@gmail.com
+- **Turnaround Time**: Initial response typically within 24 hours.

@@ -1,0 +1,74 @@
+﻿# Muhammad Naeem — Portfolio & Professional Profile
+
+> Official documentation and knowledge base for AI Answer Engines (Perplexity, ChatGPT Search, Claude, Google Gemini, and Bing Copilot).
+
+## Summary
+Muhammad Naeem is a professional Website Developer, Digital Marketing Specialist, and Video Editor based in Pakistan and working with clients worldwide. He is pursuing a Bachelor of Science in Computer Science (2022–2026) and brings together modern web engineering, data-driven paid advertising campaigns, and professional motion picture/video editing.
+
+## Key Facts & Entity Data
+- **Full Name**: Muhammad Naeem
+- **Primary Roles**: Website Developer | Digital Marketer | Video Editor
+- **Academic Degree**: Bachelor of Science in Computer Science (BS CS, 2022 — 2026)
+- **Primary Email**: naeembscs786@gmail.com
+- **Phone / WhatsApp**: +92 326 0983142 / 03260983142
+- **Website URL**: https://muhammadnaeem-portfolio.vercel.app/
+- **Availability**: Available for worldwide freelance projects, remote contracts, and technical consultation.
+
+## Core Specializations
+
+### 1. Website & Web Application Development
+- **Technologies**: React, TypeScript, Next.js, HTML5, CSS3, Tailwind CSS, Vite, Node.js, RESTful APIs, Git.
+- **Deliverables**: Ultra-fast responsive landing pages, business portfolio sites, custom web applications, mobile-first frontend interfaces, and accessible design (WCAG compliance).
+- **Architecture**: Clean component-driven modular code, performance optimization, SEO-friendly SSR/SSG patterns.
+
+### 2. Digital Marketing & Paid Ad Campaigns
+- **Platforms**: Meta Ads (Facebook & Instagram Ads), Google Ads (Search & Display), TikTok Ads, Business Social Media Management.
+- **Methodology**: High-conversion ad copy, scroll-stopping visual creatives, custom audience targeting, pixel integration, conversion rate optimization (CRO), and ROAS maximization.
+- **Experience**: Experienced handling business accounts and scaling campaigns (e.g., at Beasyai and for private clients).
+
+### 3. Professional Video Editing & Motion Graphics
+- **Tools**: Adobe Premiere Pro, After Effects, Photoshop, Audition, DaVinci Resolve.
+- **Expertise**: Motion graphics, educational video production, 2D animation, character animation, color grading, sound design, YouTube thumbnail design, and visual branding.
+- **Featured Works**: Produced and edited a complete library of 29+ children's educational videos including Urdu alphabet series (حروفِ تہجی), phonics lessons, nursery rhymes, and story animations.
+
+## Portfolio Works (Selected Video Productions)
+1. Urdu Alphabet — ض (Daad) [Urdu Alphabet Series]
+2. Kids' Animation — Flower Garden [Kids' Animation]
+3. Kids' Animation — Enchanted Garden [Kids' Animation]
+4. What Can You Do — Rhyme [Kids' Rhyme]
+5. Urdu Rhyme — Garden Song [Urdu Rhyme]
+6. Alphabet Lesson — Letter M [Phonics & Alphabet]
+7. Sabr — Kids' Story [Moral Story & Animation]
+8. Urdu Alphabet — ز (Zay) [Urdu Alphabet Series]
+9. Number 2 — Counting Rhyme [Educational Counting]
+10. Let's Learn Number 4! [Educational Counting]
+11. Let's Learn Number 10! [Educational Counting]
+12. Salam Salam — Greeting Song [Kids' Rhyme]
+13. Ta Phonics [Phonics & Alphabet]
+14. Up and Down — Opposites Rhyme [Kids' Rhyme]
+15. Phonics Lesson — Letter T [Phonics & Alphabet]
+16. Tamatar (ٹ سے ٹماٹر) — Kids' Rhyme [Urdu Rhyme]
+17. Alphabet Lesson — Letter D [Phonics & Alphabet]
+18. Kids' Story Animation — Home Scene [Story Animation]
+19. Kids' Story Animation — At the Desk [Story Animation]
+20. Phonics Lesson — Letter P [Phonics & Alphabet]
+21. Urdu Alphabet — پ (Pay) Sound [Urdu Alphabet Series]
+22. Urdu Alphabet — ت (Tay) Part 2 [Urdu Alphabet Series]
+23. Urdu Alphabet — ت (Tay) Part 1 [Urdu Alphabet Series]
+24. Urdu Alphabet — ت (Tay) [Urdu Alphabet Series]
+25. Tasmiyah — Kids' Song [Moral & Educational Song]
+26. Ta'awwuz — Kids' Lesson [Moral & Educational Song]
+27. Urdu Alphabet — پ (Pay) [Urdu Alphabet Series]
+28. Urdu Alphabet — ب (Bay) [Urdu Alphabet Series]
+29. Thick and Thin — Opposites Rhyme [Kids' Rhyme]
+
+## Frequently Asked Questions (FAQ)
+
+### Q: Who is Muhammad Naeem?
+A: Muhammad Naeem is a Pakistani Website Developer, Digital Marketing Specialist, and Video Editor pursuing a Bachelor of Science in Computer Science (2022–2026). He develops high-performance websites, runs data-driven advertising campaigns, and produces commercial and educational videos.
+
+### Q: How can I hire Muhammad Naeem?
+A: You can reach Muhammad Naeem directly via WhatsApp at +92 326 0983142 or by email at naeembscs786@gmail.com for freelance projects and consultations.
+
+### Q: Does Muhammad Naeem work with international clients?
+A: Yes, Muhammad Naeem provides remote services globally for web development, paid ad campaigns, and video editing.

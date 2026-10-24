@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 const contacts = [
   { label: 'EMAIL', type: 'email', link: 'mailto:naeembscs786@gmail.com' },
   { label: 'PHONE', type: 'phone', link: 'tel:03260983142' },
+  { label: 'WHATSAPP', type: 'phone', link: 'https://wa.me/923260983142' },
 ]
 
 const fadeInUp = {
@@ -44,9 +45,9 @@ export function Contact() {
           className="mb-12 lg:mb-16 max-w-2xl"
         >
           <h3 className="text-xl md:text-2xl lg:text-3xl text-white font-light leading-tight mb-4">
-            HAVE A VIDEO<br />
-            OR A BRAND<br />
-            TO BUILD?
+            HAVE A WEBSITE,<br />
+            AD CAMPAIGN, OR<br />
+            VIDEO TO BUILD?
           </h3>
           <p className="text-sm text-gray-500 tracking-widest uppercase">
             I REPLY FASTER THAN MY TURNAROUND — USUALLY WITHIN A DAY
@@ -59,6 +60,8 @@ export function Contact() {
             <motion.a
               key={contact.label}
               href={contact.link}
+              target={contact.link.startsWith('http') ? '_blank' : undefined}
+              rel="noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -106,10 +109,10 @@ export function Contact() {
           className="mt-24 lg:mt-32 pt-8 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="text-xs text-gray-600">
-            © {new Date().getFullYear()} Naeem Khan. All rights reserved.
+            © {new Date().getFullYear()} Muhammad Naeem. All rights reserved.
           </p>
           <p className="text-xs text-gray-600">
-            Video Editor &amp; Graphic Designer
+            Website Developer &amp; Digital Marketer &amp; Video Editor
           </p>
         </motion.footer>
       </div>

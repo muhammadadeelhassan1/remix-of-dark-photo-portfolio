@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion'
 
 const skills = [
-  'Video Editing',
-  'Motion Graphics',
-  'Graphic Design',
-  'Color Grading',
-  'Sound Design',
-  'Logo & Branding',
-  'Thumbnails & Social Content',
-  'Digital Marketing',
+  'Website Development',
+  'Paid Ad Campaigns (Meta & Google Ads)',
+  'Business Social Media Handling',
+  'Video Editing (Kids\' Rhymes & Phonics)',
+  'Color Grading & Audio Sync',
+  'Motion Graphics & Visual Effects',
+  'YouTube Thumbnails & Social Content',
+  'Logo Design & Brand Identity',
 ]
 
 const fadeInUp = {
@@ -35,7 +35,7 @@ export function Skills() {
           SKILLS
         </motion.h2>
 
-        {/* Skills List */}
+        {/* Skills List - Clean 2-column minimalist layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4 lg:gap-y-6">
           {skills.map((skill, index) => (
             <motion.div
@@ -43,7 +43,7 @@ export function Skills() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.08 }}
               className="border-b border-gray-800 pb-4"
             >
               <span className="text-lg md:text-xl lg:text-2xl text-gray-300 font-light">

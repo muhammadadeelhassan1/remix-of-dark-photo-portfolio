@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import heroImage from '@/assets/hero.jpg'
+import heroImage from '@/assets/hero.png'
 
 export function Hero() {
   return (
@@ -8,11 +8,13 @@ export function Hero() {
       <div className="absolute inset-0 w-full h-full">
         <img
           src={heroImage}
-          alt="Naeem Khan — video editing studio"
-          className="w-full h-full object-cover object-center"
+          alt="Muhammad Naeem"
+          className="w-full h-full object-cover object-[90%_center] md:object-center"
         />
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40 md:bg-black/30" />
+        {/* Left side black shadow on mobile */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/60 to-transparent md:hidden" />
+        {/* Bottom gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent md:bg-black/30" />
       </div>
 
       {/* Content */}
@@ -25,11 +27,11 @@ export function Hero() {
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <h1 className="font-display leading-none tracking-tighter text-[15vw] sm:text-[12vw] md:text-hero">
+              <span className="block text-white">MUHAMMAD</span>
               <span className="block text-white">NAEEM</span>
-              <span className="block text-white">KHAN</span>
             </h1>
             <p className="font-display text-white/90 text-2xl sm:text-3xl md:text-4xl mt-2 tracking-wide">
-              VIDEO EDITOR <span className="text-gray-400">&amp;</span> GRAPHIC DESIGNER
+              WEBSITE DEVELOPER <span className="text-gray-400">&amp;</span> DIGITAL MARKETER <span className="text-gray-400">&amp;</span> VIDEO EDITOR
             </p>
 
             <motion.p
@@ -38,9 +40,7 @@ export function Hero() {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="mt-6 md:mt-8 text-sm sm:text-base text-white/80 max-w-sm md:max-w-md leading-relaxed"
             >
-              I cut and design stories that move — kids' rhymes, phonics and
-              educational videos, plus the graphics and social content that
-              carry them.
+              I build modern websites, scale businesses through high-performing ad campaigns and social media management, and craft engaging educational videos.
             </motion.p>
           </motion.div>
         </div>

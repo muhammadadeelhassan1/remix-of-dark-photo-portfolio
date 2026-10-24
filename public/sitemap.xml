@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <!-- Primary Website Entry -->
+  <url>
+    <loc>https://muhammadnaeem-portfolio.vercel.app/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+
+    <image:image>
+      <image:loc>https://muhammadnaeem-portfolio.vercel.app/favicon-512.png</image:loc>
+      <image:title>Muhammad Naeem — Website Developer, Digital Marketer &amp; Video Editor</image:title>
+      <image:caption>Official Portfolio of Muhammad Naeem</image:caption>
+    </image:image>
+
+    <!-- All 29 Video Projects for Google Video & Bing Search Indexing -->
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v01-poster.jpg</video:thumbnail_loc>
+      <video:title>Urdu Alphabet — ض (Daad)</video:title>
+      <video:description>Educational Urdu alphabet phonics animation edited by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v02-poster.jpg</video:thumbnail_loc>
+      <video:title>Kids' Animation — Flower Garden</video:title>
+      <video:description>Colorful 3D animated rhymes and visual effects edited by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v03-poster.jpg</video:thumbnail_loc>
+      <video:title>Kids' Animation — Enchanted Garden</video:title>
+      <video:description>Engaging moral story animation with sound design edited by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v04-poster.jpg</video:thumbnail_loc>
+      <video:title>What Can You Do — Rhyme</video:title>
+      <video:description>Nursery rhyme video editing with character animations and rhythmic audio sync.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v05-poster.jpg</video:thumbnail_loc>
+      <video:title>Urdu Rhyme — Garden Song</video:title>
+      <video:description>Urdu rhymes video editing with vibrant color grading by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v06-poster.jpg</video:thumbnail_loc>
+      <video:title>Alphabet Lesson — Letter M</video:title>
+      <video:description>Early childhood alphabet phonics lesson editing by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v07-poster.jpg</video:thumbnail_loc>
+      <video:title>Sabr — Kids' Story</video:title>
+      <video:description>Educational story video production and motion editing by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v08-poster.jpg</video:thumbnail_loc>
+      <video:title>Urdu Alphabet — ز (Zay)</video:title>
+      <video:description>Urdu alphabet learning animation and audio synchronization by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v09-poster.jpg</video:thumbnail_loc>
+      <video:title>Number 2 — Counting Rhyme</video:title>
+      <video:description>Kids counting and numbers educational video edit by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v10-poster.jpg</video:thumbnail_loc>
+      <video:title>Let's Learn Number 4!</video:title>
+      <video:description>Preschool counting educational video production edited by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v11-poster.jpg</video:thumbnail_loc>
+      <video:title>Let's Learn Number 10!</video:title>
+      <video:description>Educational counting and phonics rhyming video edit by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v12-poster.jpg</video:thumbnail_loc>
+      <video:title>Salam Salam — Greeting Song</video:title>
+      <video:description>Islamic kids manners and greeting rhyme video edit by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v13-poster.jpg</video:thumbnail_loc>
+      <video:title>Ta Phonics</video:title>
+      <video:description>Phonics sounds lesson for early childhood learners by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v14-poster.jpg</video:thumbnail_loc>
+      <video:title>Up and Down — Opposites Rhyme</video:title>
+      <video:description>Learning opposites fun educational rhyme animation edited by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v15-poster.jpg</video:thumbnail_loc>
+      <video:title>Phonics Lesson — Letter T</video:title>
+      <video:description>English alphabet phonics letter T lesson video edited by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v16-poster.jpg</video:thumbnail_loc>
+      <video:title>Tamatar — Kids' Rhyme (ٹ سے ٹماٹر)</video:title>
+      <video:description>Popular Urdu poem animation and motion graphics production by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v17-poster.jpg</video:thumbnail_loc>
+      <video:title>Alphabet Lesson — Letter D</video:title>
+      <video:description>English phonics letter D educational animation by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v18-poster.jpg</video:thumbnail_loc>
+      <video:title>Kids' Story Animation — Home Scene</video:title>
+      <video:description>Heartwarming family and moral story animation edited by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v19-poster.jpg</video:thumbnail_loc>
+      <video:title>Kids' Story Animation — At the Desk</video:title>
+      <video:description>Study and good habits educational animation edited by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v20-poster.jpg</video:thumbnail_loc>
+      <video:title>Phonics Lesson — Letter P</video:title>
+      <video:description>English phonics letter P pronunciation video edit by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v21-poster.jpg</video:thumbnail_loc>
+      <video:title>Urdu Alphabet — پ (Pay) Sound</video:title>
+      <video:description>Urdu letter pronunciation and character video lesson edited by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v22-poster.jpg</video:thumbnail_loc>
+      <video:title>Urdu Alphabet — ت (Tay) — Part 2</video:title>
+      <video:description>Interactive educational video edit for kids by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v23-poster.jpg</video:thumbnail_loc>
+      <video:title>Urdu Alphabet — ت (Tay) — Part 1</video:title>
+      <video:description>Preschool animated lesson video production by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v24-poster.jpg</video:thumbnail_loc>
+      <video:title>Urdu Alphabet — ت (Tay)</video:title>
+      <video:description>Comprehensive Urdu letter lesson and animation by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v25-poster.jpg</video:thumbnail_loc>
+      <video:title>Tasmiyah — Kids' Song</video:title>
+      <video:description>Bismillah moral rhyme and educational song video edit by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v26-poster.jpg</video:thumbnail_loc>
+      <video:title>Ta'awwuz — Kids' Lesson</video:title>
+      <video:description>Islamic education and values lesson video production by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v27-poster.jpg</video:thumbnail_loc>
+      <video:title>Urdu Alphabet — پ (Pay)</video:title>
+      <video:description>Urdu Haroof-e-Tahajji learning animation edited by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v28-poster.jpg</video:thumbnail_loc>
+      <video:title>Urdu Alphabet — ب (Bay)</video:title>
+      <video:description>Introductory Urdu alphabet video edit for early childhood by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://muhammadnaeem-portfolio.vercel.app/assets/videos/v29-poster.jpg</video:thumbnail_loc>
+      <video:title>Thick and Thin — Opposites Rhyme</video:title>
+      <video:description>Concepts and vocabulary educational rhyme animation edited by Muhammad Naeem.</video:description>
+      <video:player_loc>https://muhammadnaeem-portfolio.vercel.app/#work</video:player_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <!-- Deep Navigation Anchors for Site Structure -->
+  <url>
+    <loc>https://muhammadnaeem-portfolio.vercel.app/#about</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://muhammadnaeem-portfolio.vercel.app/#skills</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://muhammadnaeem-portfolio.vercel.app/#work</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://muhammadnaeem-portfolio.vercel.app/#experience</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://muhammadnaeem-portfolio.vercel.app/#contact</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>

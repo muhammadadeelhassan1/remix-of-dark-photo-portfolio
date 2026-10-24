@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
-import about1 from '@/assets/about-1.jpg'
+import about1 from '@/assets/about-1.png'
 import about2 from '@/assets/about-2.jpg'
-import about3 from '@/assets/about-3.jpg'
+import about3 from '@/assets/about-3.png'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -16,7 +16,7 @@ export function About() {
       <div className="max-w-7xl mx-auto">
         {/* Section Label */}
         <motion.div {...fadeInUp} className="mb-16">
-          <span className="text-sm text-gray-500 tracking-widest uppercase">About Naeem</span>
+          <span className="text-sm text-gray-500 tracking-widest uppercase">About Muhammad Naeem</span>
           <div className="w-6 h-px bg-gray-600 mt-2" />
         </motion.div>
 
@@ -28,11 +28,11 @@ export function About() {
           >
             <img
               src={about1}
-              alt="Graphic design workspace"
+              alt="Muhammad Naeem — Website development and creative design"
               className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
             />
             <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-              LOGOS, BRANDING &amp; SOCIAL GRAPHICS
+              WEBSITES, BRANDING &amp; CREATIVE ASSETS
             </p>
           </motion.div>
 
@@ -42,12 +42,10 @@ export function About() {
             className="order-1 lg:order-2 flex items-center"
           >
             <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
-              I'm Naeem — a video editor and graphic designer who turns raw
-              footage and blank canvases into stories people actually watch.
-              Over the past six months I've edited a full library of kids'
-              educational videos — rhymes, phonics and Urdu alphabet lessons —
-              and designed the thumbnails, logos and social graphics that
-              go with them.
+              I'm Muhammad Naeem — currently pursuing my BS in Computer Science (2022–2026).
+              I work across website development, digital marketing, and video editing.
+              I craft clean, fast, and responsive websites for businesses, while producing
+              compelling visual media and branded graphics that keep viewers engaged.
             </p>
           </motion.div>
         </div>
@@ -57,10 +55,10 @@ export function About() {
           {...fadeInUp}
           className="mb-24 lg:mb-32"
         >
-          <h2 className="font-display text-[8vw] lg:text-section leading-none tracking-tight text-gray-300">
-            "EVERY FRAME,<br />
-            <span className="text-white underline underline-offset-8">EVERY CUT,</span><br />
-            EVERY COLOR<br />
+          <h2 className="font-display text-[8vw] lg:text-section leading-[0.95] md:leading-none tracking-tight text-gray-300">
+            "EVERY LINE OF CODE,<br />
+            <span className="text-white underline underline-offset-2 sm:underline-offset-4 md:underline-offset-8">EVERY CAMPAIGN,</span><br />
+            EVERY CUT<br />
             EARNS ITS PLACE."
           </h2>
           <p className="mt-6 text-sm text-gray-500 tracking-widest uppercase">
@@ -76,10 +74,10 @@ export function About() {
             className="flex items-center lg:text-right"
           >
             <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
-              At Beasyai I work as a digital marketing expert, which means my
-              edits don't just look good — they perform. I design and cut
-              content built for reach: hooks that hold attention, pacing that
-              keeps it, and graphics that make people click.
+              In digital marketing, I manage business social media accounts and set up targeted,
+              high-performing ad campaigns across Meta and Google. My focus is on tangible growth:
+              crafting ad creatives that stop the scroll, targeting the right demographics, and optimizing
+              conversions to maximize return on ad spend.
             </p>
           </motion.div>
 
@@ -89,11 +87,11 @@ export function About() {
           >
             <img
               src={about2}
-              alt="Video editing timeline"
+              alt="Digital marketing ads and video timeline"
               className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
             />
             <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-              TIMELINE &amp; COLOR GRADING
+              PAID ADS, SOCIAL STRATEGY &amp; PERFORMANCE
             </p>
           </motion.div>
         </div>
@@ -103,11 +101,11 @@ export function About() {
           <motion.div {...fadeInUp}>
             <img
               src={about3}
-              alt="Naeem editing at night"
+              alt="Muhammad Naeem editing video projects"
               className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
             />
             <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-              LATE NIGHTS, CLEAN CUTS
+              29+ EDUCATIONAL EPISODES &amp; BRAND CONTENT
             </p>
           </motion.div>
 
@@ -117,10 +115,9 @@ export function About() {
             className="flex items-center"
           >
             <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
-              Whether it's a nursery rhyme, a phonics lesson, a YouTube intro
-              or a full brand identity, my goal stays the same: keep the
-              audience watching, and make the brand impossible to forget.
-              Scroll down to watch a selection of my recent work.
+              I've edited a comprehensive library of 29+ kids' educational videos — nursery rhymes,
+              phonics lessons, and Urdu alphabet series — and designed the thumbnails, logos, and channel
+              branding that go with each release. Scroll down to watch a selection of my recent video work.
             </p>
           </motion.div>
         </div>

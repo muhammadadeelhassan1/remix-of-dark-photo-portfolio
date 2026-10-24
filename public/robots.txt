@@ -1,3 +1,6 @@
+﻿# Robots.txt for Muhammad Naeem Portfolio
+# Optimized for Search Engines (SEO) & AI Answer/Generative Engines (AEO/GEO)
+
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +13,38 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# AI Answer Engines & LLM Crawlers (Perplexity, ChatGPT, Claude, Apple, Google Gemini)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 User-agent: *
 Allow: /
+
+# Sitemaps & AI Knowledge Base
+Sitemap: https://muhammadnaeem-portfolio.vercel.app/sitemap.xml
+# LLMs Documentation: https://muhammadnaeem-portfolio.vercel.app/llms.txt
+# LLMs Full Context: https://muhammadnaeem-portfolio.vercel.app/llms-full.txt
