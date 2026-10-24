@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { videos } from '@/data/videos'
 
@@ -120,37 +120,30 @@ interface VideoModalProps {
 }
 
 function VideoModal({ video, index, total, onClose, onPrev, onNext }: VideoModalProps) {
-  const videoRef = useState<HTMLVideoElement | null>(null)[0]
-  const [internalRef, setInternalRef] = useState<HTMLVideoElement | null>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
-  const [isBuffering, setIsBuffering] = useState(true)
-  const [hasError, setHasError] = useState(false)
+  const [isBuffering, setIsBuffering] = useState(false)
 
-  // Handle video element play
-  const handleTogglePlay = () => {
-    if (!internalRef) return
-    if (internalRef.paused) {
-      internalRef.play().catch(() => {
+  // Auto-play attempt when modal opens
+  useEffect(() => {
+    const el = videoRef.current
+    if (el) {
+      el.play().catch(() => {
+        // Autoplay blocked by browser policy; user can click the center play button
         setIsPlaying(false)
       })
-    } else {
-      internalRef.pause()
     }
-  }
+  }, [video.src])
 
-  // Attempt autoplay when video loads
-  const handleLoadedData = () => {
-    setIsBuffering(false)
-    if (internalRef) {
-      const promise = internalRef.play()
-      if (promise !== undefined) {
-        promise
-          .then(() => setIsPlaying(true))
-          .catch(() => {
-            // Browser autoplay policy blocked unmuted play; user can click the play button
-            setIsPlaying(false)
-          })
-      }
+  const togglePlay = () => {
+    const el = videoRef.current
+    if (!el) return
+    if (el.paused) {
+      el.play().catch((err) => {
+        console.warn('Play error:', err)
+      })
+    } else {
+      el.pause()
     }
   }
 
@@ -159,14 +152,14 @@ function VideoModal({ video, index, total, onClose, onPrev, onNext }: VideoModal
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-10 select-none"
+      className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-8 select-none"
       onClick={onClose}
     >
       {/* Close Button */}
       <button
         onClick={onClose}
         aria-label="Close video"
-        className="absolute top-4 right-4 md:top-8 md:right-8 text-white text-sm tracking-widest uppercase hover:text-cyan-400 transition-colors z-20 flex items-center gap-2 bg-black/60 px-4 py-2 rounded-full border border-white/10"
+        className="absolute top-4 right-4 md:top-8 md:right-8 text-white text-sm tracking-widest uppercase hover:text-cyan-400 transition-colors z-20 flex items-center gap-2 bg-black/70 px-4 py-2 rounded-full border border-white/20"
       >
         <span>Close</span>
         <span className="text-base">✕</span>
@@ -176,88 +169,63 @@ function VideoModal({ video, index, total, onClose, onPrev, onNext }: VideoModal
       <button
         onClick={(e) => { e.stopPropagation(); onPrev() }}
         aria-label="Previous video"
-        className="absolute left-2 md:left-6 text-white text-3xl hover:text-cyan-400 transition-colors z-20 p-3 bg-black/50 hover:bg-black/80 rounded-full border border-white/10"
+        className="absolute left-2 md:left-6 text-white text-3xl hover:text-cyan-400 transition-colors z-20 p-3 bg-black/60 hover:bg-black/90 rounded-full border border-white/20"
       >
         ‹
       </button>
       <button
         onClick={(e) => { e.stopPropagation(); onNext() }}
         aria-label="Next video"
-        className="absolute right-2 md:right-6 text-white text-3xl hover:text-cyan-400 transition-colors z-20 p-3 bg-black/50 hover:bg-black/80 rounded-full border border-white/10"
+        className="absolute right-2 md:right-6 text-white text-3xl hover:text-cyan-400 transition-colors z-20 p-3 bg-black/60 hover:bg-black/90 rounded-full border border-white/20"
       >
         ›
       </button>
 
-      {/* Main Video Modal Container */}
+      {/* Main Video Container */}
       <motion.div
-        initial={{ scale: 0.95, opacity: 0 }}
+        initial={{ scale: 0.96, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.95, opacity: 0 }}
-        transition={{ duration: 0.3 }}
+        exit={{ scale: 0.96, opacity: 0 }}
+        transition={{ duration: 0.25 }}
         className="w-full max-w-4xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative w-full aspect-video bg-black rounded-lg overflow-hidden border border-gray-800 shadow-2xl">
           <video
-            ref={setInternalRef}
+            ref={videoRef}
             key={video.src}
+            src={video.src}
             poster={video.poster}
             controls
             playsInline
-            preload="auto"
-            onLoadedData={handleLoadedData}
-            onWaiting={() => setIsBuffering(true)}
-            onPlaying={() => { setIsBuffering(false); setIsPlaying(true); setHasError(false) }}
+            preload="metadata"
+            onPlay={() => setIsPlaying(true)}
+            onPlaying={() => { setIsPlaying(true); setIsBuffering(false) }}
             onPause={() => setIsPlaying(false)}
+            onWaiting={() => setIsBuffering(true)}
             onCanPlay={() => setIsBuffering(false)}
-            onError={() => { setIsBuffering(false); setHasError(true) }}
             className="w-full h-full object-contain bg-black"
-          >
-            <source src={video.src} type="video/mp4" />
-            Your browser does not support HTML5 video streaming.
-          </video>
+          />
 
-          {/* Buffering Spinner */}
-          {isBuffering && !hasError && (
-            <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center bg-black/40 backdrop-blur-sm">
-              <div className="w-12 h-12 border-4 border-cyan-400/30 border-t-cyan-400 rounded-full animate-spin mb-3" />
-              <span className="text-xs uppercase tracking-widest text-gray-300 font-mono">
-                Streaming Video...
-              </span>
-            </div>
-          )}
-
-          {/* Error Message & Retry */}
-          {hasError && (
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/80 p-6 text-center">
-              <p className="text-red-400 text-sm mb-4">Unable to stream video. Please check your network.</p>
-              <button
-                onClick={() => {
-                  setHasError(false)
-                  setIsBuffering(true)
-                  if (internalRef) {
-                    internalRef.load()
-                    internalRef.play().catch(() => {})
-                  }
-                }}
-                className="px-4 py-2 text-xs uppercase tracking-wider bg-white text-black font-semibold rounded hover:bg-gray-200 transition-colors"
-              >
-                Retry
-              </button>
-            </div>
-          )}
-
-          {/* Large Center Play Overlay if paused and not buffering */}
-          {!isPlaying && !isBuffering && !hasError && (
+          {/* Large Clickable Play Overlay when Paused */}
+          {!isPlaying && (
             <button
-              onClick={handleTogglePlay}
-              aria-label="Play Video"
-              className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/20 transition-all group"
+              onClick={togglePlay}
+              aria-label="Play video"
+              className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/20 transition-all group cursor-pointer"
             >
-              <div className="w-20 h-20 rounded-full bg-cyan-500/90 text-black flex items-center justify-center text-3xl pl-1 shadow-lg shadow-cyan-500/50 group-hover:scale-110 group-hover:bg-cyan-400 transition-all">
+              <div className="w-20 h-20 rounded-full bg-cyan-400 text-black flex items-center justify-center text-3xl pl-1 shadow-2xl shadow-cyan-400/50 group-hover:scale-110 group-hover:bg-cyan-300 transition-transform">
                 ▶
               </div>
             </button>
+          )}
+
+          {/* Discreet Buffering indicator only when playing */}
+          {isPlaying && isBuffering && (
+            <div className="absolute top-4 right-4 bg-black/80 text-cyan-400 text-xs px-3 py-1.5 rounded-full flex items-center gap-2 border border-cyan-400/30 pointer-events-none">
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+              <span>Buffering...</span>
+            </div>
           )}
         </div>
 
