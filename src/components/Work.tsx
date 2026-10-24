@@ -21,7 +21,7 @@ const experiences = [
     title: 'Digital Marketing & Social Media Specialist',
     company: 'Beasyai',
     location: 'Remote',
-    period: '2023 — Present',
+    period: '2026 — Present',
     description: 'Planning and executing paid ad campaigns on Meta and Google, managing business social media accounts, and shaping content strategies to drive engagement, generate leads, and maximize ROAS.',
     skills: ['Digital Marketing', 'Paid Ads', 'Meta Ads', 'Google Ads', 'Social Media Handling', 'Analytics'],
   },

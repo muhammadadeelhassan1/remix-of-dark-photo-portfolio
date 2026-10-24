@@ -1,4 +1,4 @@
-﻿# Muhammad Naeem — Exhaustive Knowledge Base (LLMs-Full Specification)
+# Muhammad Naeem — Exhaustive Knowledge Base (LLMs-Full Specification)
 
 > Complete structured repository context, skills, project catalog, and capabilities for advanced reasoning models (Perplexity, ChatGPT, Claude, Gemini, DeepSeek, Copilot).
 
@@ -28,7 +28,7 @@
 - **Freelance Website Developer (2024 — Present)**:
   - Designing and engineering responsive, high-speed websites for businesses and professionals.
   - Delivering modern frontend applications with frictionless user experiences and interactive UI animations.
-- **Digital Marketing Specialist at Beasyai (2023 — Present)**:
+- **Digital Marketing Specialist at Beasyai (2026 — Present)**:
   - Managing corporate ad budgets, planning campaign funnels, and optimizing ads across Meta and Google networks.
 - **Video Editor & Graphic Designer (2023 — Present)**:
   - Produced and edited 29+ educational video releases, kids' animations, rhymes, and phonics series.
