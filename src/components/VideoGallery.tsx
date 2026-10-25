@@ -1,5 +1,5 @@
-import { useEffect, useState, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 import { videos } from '@/data/videos'
 
 const fadeInUp = {
@@ -11,35 +11,28 @@ const fadeInUp = {
 
 export function VideoGallery() {
   const [selected, setSelected] = useState<number | null>(null)
-  const videoRef = useRef<HTMLVideoElement | null>(null)
-
-  const abortVideo = () => {
-    if (videoRef.current) {
-      try {
-        videoRef.current.pause()
-        videoRef.current.removeAttribute('src')
-        videoRef.current.load()
-      } catch {}
-    }
-  }
 
   const close = () => {
-    abortVideo()
+    const el = document.getElementById('active-modal-video') as HTMLVideoElement | null
+    if (el) {
+      try {
+        el.pause()
+      } catch {}
+    }
     setSelected(null)
   }
 
   const step = (dir: 1 | -1) => {
-    abortVideo()
+    const el = document.getElementById('active-modal-video') as HTMLVideoElement | null
+    if (el) {
+      try {
+        el.pause()
+      } catch {}
+    }
     setSelected((current) =>
       current === null ? null : (current + dir + videos.length) % videos.length
     )
   }
-
-  useEffect(() => {
-    return () => {
-      abortVideo()
-    }
-  }, [selected])
 
   useEffect(() => {
     if (selected === null) return
@@ -154,7 +147,6 @@ export function VideoGallery() {
             style={{ transform: 'translateZ(0)' }}
           >
             <video
-              ref={videoRef}
               id="active-modal-video"
               key={videos[selected].src}
               src={videos[selected].src}
@@ -162,7 +154,7 @@ export function VideoGallery() {
               controls
               autoPlay
               playsInline
-              preload="metadata"
+              preload="auto"
               onCanPlay={(e) => {
                 const el = e.currentTarget
                 if (el.paused) el.play().catch(() => {})
