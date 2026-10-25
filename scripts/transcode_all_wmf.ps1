@@ -51,10 +51,10 @@ foreach ($vid in $videos) {
     $srcFile = Await ([Windows.Storage.StorageFile]::GetFileFromPathAsync($inputPath)) ([Windows.Storage.StorageFile])
     $dstFile = Await ($dstFolder.CreateFileAsync($filename, [Windows.Storage.CreationCollisionOption]::ReplaceExisting)) ([Windows.Storage.StorageFile])
 
-    # 720p HD with 900 kbps video + 128 kbps AAC audio for crystal clear fast streaming
-    $profile = [Windows.Media.MediaProperties.MediaEncodingProfile]::CreateMp4([Windows.Media.MediaProperties.VideoEncodingQuality]::HD720p)
-    $profile.Video.Bitrate = 900000
-    $profile.Audio.Bitrate = 128000
+    # Ultra-fast instant web streaming profile: 480p with 220 kbps video + 48 kbps AAC audio
+    $profile = [Windows.Media.MediaProperties.MediaEncodingProfile]::CreateMp4([Windows.Media.MediaProperties.VideoEncodingQuality]::Wvga)
+    $profile.Video.Bitrate = 220000
+    $profile.Audio.Bitrate = 48000
 
     $sw = [System.Diagnostics.Stopwatch]::StartNew()
     $prepareOp = Await ($transcoder.PrepareFileTranscodeAsync($srcFile, $dstFile, $profile)) ([Windows.Media.Transcoding.PrepareTranscodeResult])
