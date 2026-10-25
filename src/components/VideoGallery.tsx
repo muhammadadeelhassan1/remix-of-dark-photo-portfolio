@@ -22,6 +22,19 @@ export function VideoGallery() {
       current === null ? null : (current + dir + videos.length) % videos.length
     )
 
+  const preloadVideo = (src: string) => {
+    if (typeof document === 'undefined') return
+    const id = `preload-${src}`
+    if (!document.getElementById(id)) {
+      const link = document.createElement('link')
+      link.id = id
+      link.rel = 'preload'
+      link.as = 'video'
+      link.href = src
+      document.head.appendChild(link)
+    }
+  }
+
   useEffect(() => {
     if (selected === null) return
     const onKey = (e: KeyboardEvent) => {
@@ -62,6 +75,8 @@ export function VideoGallery() {
             <motion.button
               key={video.src}
               onClick={() => setSelected(index)}
+              onMouseEnter={() => preloadVideo(video.src)}
+              onTouchStart={() => preloadVideo(video.src)}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
