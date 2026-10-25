@@ -121,30 +121,20 @@ interface VideoModalProps {
 
 function VideoModal({ video, index, total, onClose, onPrev, onNext }: VideoModalProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [isBuffering, setIsBuffering] = useState(false)
+  const [hasStarted, setHasStarted] = useState(false)
 
-  // Auto-play attempt when modal opens
+  // Reset initial overlay when video source changes
   useEffect(() => {
-    const el = videoRef.current
-    if (el) {
-      el.play().catch(() => {
-        // Autoplay blocked by browser policy; user can click the center play button
-        setIsPlaying(false)
-      })
-    }
+    setHasStarted(false)
   }, [video.src])
 
-  const togglePlay = () => {
+  const handleStartPlay = () => {
     const el = videoRef.current
     if (!el) return
-    if (el.paused) {
-      el.play().catch((err) => {
-        console.warn('Play error:', err)
-      })
-    } else {
-      el.pause()
-    }
+    setHasStarted(true)
+    el.play().catch((err) => {
+      console.warn('Play error:', err)
+    })
   }
 
   return (
@@ -198,19 +188,14 @@ function VideoModal({ video, index, total, onClose, onPrev, onNext }: VideoModal
             poster={video.poster}
             controls
             playsInline
-            preload="metadata"
-            onPlay={() => setIsPlaying(true)}
-            onPlaying={() => { setIsPlaying(true); setIsBuffering(false) }}
-            onPause={() => setIsPlaying(false)}
-            onWaiting={() => setIsBuffering(true)}
-            onCanPlay={() => setIsBuffering(false)}
+            preload="auto"
             className="w-full h-full object-contain bg-black"
           />
 
-          {/* Large Clickable Play Overlay when Paused */}
-          {!isPlaying && (
+          {/* Initial Clickable Play Overlay before playback starts */}
+          {!hasStarted && (
             <button
-              onClick={togglePlay}
+              onClick={handleStartPlay}
               aria-label="Play video"
               className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/20 transition-all group cursor-pointer"
             >
@@ -218,14 +203,6 @@ function VideoModal({ video, index, total, onClose, onPrev, onNext }: VideoModal
                 ▶
               </div>
             </button>
-          )}
-
-          {/* Discreet Buffering indicator only when playing */}
-          {isPlaying && isBuffering && (
-            <div className="absolute top-4 right-4 bg-black/80 text-cyan-400 text-xs px-3 py-1.5 rounded-full flex items-center gap-2 border border-cyan-400/30 pointer-events-none">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
-              <span>Buffering...</span>
-            </div>
           )}
         </div>
 
