@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { videos } from '@/data/videos'
 
@@ -96,131 +96,70 @@ export function VideoGallery() {
       {/* Lightbox */}
       <AnimatePresence>
         {selected !== null && (
-          <VideoModal
-            video={videos[selected]}
-            index={selected}
-            total={videos.length}
-            onClose={close}
-            onPrev={() => step(-1)}
-            onNext={() => step(1)}
-          />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-10 select-none"
+            onClick={close}
+          >
+            {/* Close */}
+            <button
+              onClick={close}
+              aria-label="Close video"
+              className="absolute top-4 right-4 md:top-8 md:right-8 text-white text-sm tracking-widest uppercase hover:opacity-60 transition-opacity z-10"
+            >
+              Close ✕
+            </button>
+
+            {/* Prev / Next */}
+            <button
+              onClick={(e) => { e.stopPropagation(); step(-1) }}
+              aria-label="Previous video"
+              className="absolute left-2 md:left-8 text-white text-3xl hover:opacity-60 transition-opacity z-10 px-2"
+            >
+              ‹
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); step(1) }}
+              aria-label="Next video"
+              className="absolute right-2 md:right-8 text-white text-3xl hover:opacity-60 transition-opacity z-10 px-2"
+            >
+              ›
+            </button>
+
+            <div
+              className="w-full max-w-4xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <video
+                key={videos[selected].src}
+                src={videos[selected].src}
+                poster={videos[selected].poster}
+                controls
+                autoPlay
+                playsInline
+                preload="auto"
+                className="w-full aspect-video bg-black"
+              />
+              <div className="mt-4 flex items-start justify-between gap-4">
+                <div>
+                  <h3 className="text-lg lg:text-xl text-white font-light">
+                    {videos[selected].title}
+                  </h3>
+                  <p className="text-xs text-gray-500 tracking-widest uppercase mt-1">
+                    {videos[selected].category}
+                  </p>
+                </div>
+                <span className="text-sm text-gray-600 whitespace-nowrap">
+                  {selected + 1} / {videos.length}
+                </span>
+              </div>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </section>
-  )
-}
-
-interface VideoModalProps {
-  video: (typeof videos)[0]
-  index: number
-  total: number
-  onClose: () => void
-  onPrev: () => void
-  onNext: () => void
-}
-
-function VideoModal({ video, index, total, onClose, onPrev, onNext }: VideoModalProps) {
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const [hasStarted, setHasStarted] = useState(false)
-
-  // Reset initial overlay when video source changes
-  useEffect(() => {
-    setHasStarted(false)
-  }, [video.src])
-
-  const handleStartPlay = () => {
-    const el = videoRef.current
-    if (!el) return
-    setHasStarted(true)
-    el.play().catch((err) => {
-      console.warn('Play error:', err)
-    })
-  }
-
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-8 select-none"
-      onClick={onClose}
-    >
-      {/* Close Button */}
-      <button
-        onClick={onClose}
-        aria-label="Close video"
-        className="absolute top-4 right-4 md:top-8 md:right-8 text-white text-sm tracking-widest uppercase hover:text-cyan-400 transition-colors z-20 flex items-center gap-2 bg-black/70 px-4 py-2 rounded-full border border-white/20"
-      >
-        <span>Close</span>
-        <span className="text-base">✕</span>
-      </button>
-
-      {/* Prev / Next Navigation */}
-      <button
-        onClick={(e) => { e.stopPropagation(); onPrev() }}
-        aria-label="Previous video"
-        className="absolute left-2 md:left-6 text-white text-3xl hover:text-cyan-400 transition-colors z-20 p-3 bg-black/60 hover:bg-black/90 rounded-full border border-white/20"
-      >
-        ‹
-      </button>
-      <button
-        onClick={(e) => { e.stopPropagation(); onNext() }}
-        aria-label="Next video"
-        className="absolute right-2 md:right-6 text-white text-3xl hover:text-cyan-400 transition-colors z-20 p-3 bg-black/60 hover:bg-black/90 rounded-full border border-white/20"
-      >
-        ›
-      </button>
-
-      {/* Main Video Container */}
-      <motion.div
-        initial={{ scale: 0.96, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.96, opacity: 0 }}
-        transition={{ duration: 0.25 }}
-        className="w-full max-w-4xl"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="relative w-full aspect-video bg-black rounded-lg overflow-hidden border border-gray-800 shadow-2xl">
-          <video
-            ref={videoRef}
-            key={video.src}
-            src={video.src}
-            poster={video.poster}
-            controls
-            playsInline
-            preload="auto"
-            className="w-full h-full object-contain bg-black"
-          />
-
-          {/* Initial Clickable Play Overlay before playback starts */}
-          {!hasStarted && (
-            <button
-              onClick={handleStartPlay}
-              aria-label="Play video"
-              className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/20 transition-all group cursor-pointer"
-            >
-              <div className="w-20 h-20 rounded-full bg-cyan-400 text-black flex items-center justify-center text-3xl pl-1 shadow-2xl shadow-cyan-400/50 group-hover:scale-110 group-hover:bg-cyan-300 transition-transform">
-                ▶
-              </div>
-            </button>
-          )}
-        </div>
-
-        {/* Video Info Footer */}
-        <div className="mt-4 flex items-start justify-between gap-4 px-1">
-          <div>
-            <h3 className="text-lg lg:text-xl text-white font-light">
-              {video.title}
-            </h3>
-            <p className="text-xs text-cyan-400 tracking-widest uppercase mt-1">
-              {video.category}
-            </p>
-          </div>
-          <span className="text-sm text-gray-500 font-mono whitespace-nowrap">
-            {index + 1} / {total}
-          </span>
-        </div>
-      </motion.div>
-    </motion.div>
   )
 }
