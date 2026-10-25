@@ -12,7 +12,11 @@ const fadeInUp = {
 export function VideoGallery() {
   const [selected, setSelected] = useState<number | null>(null)
 
-  const close = () => setSelected(null)
+  const close = () => {
+    const el = document.getElementById('active-modal-video') as HTMLVideoElement | null
+    if (el) el.pause()
+    setSelected(null)
+  }
   const step = (dir: 1 | -1) =>
     setSelected((current) =>
       current === null ? null : (current + dir + videos.length) % videos.length
@@ -94,72 +98,70 @@ export function VideoGallery() {
       </div>
 
       {/* Lightbox */}
-      <AnimatePresence>
-        {selected !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
-            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-10 select-none"
+      {selected !== null && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-10 select-none"
+          onClick={close}
+          style={{ isolation: 'isolate' }}
+        >
+          {/* Close */}
+          <button
             onClick={close}
+            aria-label="Close video"
+            className="absolute top-4 right-4 md:top-8 md:right-8 text-white text-sm tracking-widest uppercase hover:opacity-60 transition-opacity z-10"
           >
-            {/* Close */}
-            <button
-              onClick={close}
-              aria-label="Close video"
-              className="absolute top-4 right-4 md:top-8 md:right-8 text-white text-sm tracking-widest uppercase hover:opacity-60 transition-opacity z-10"
-            >
-              Close ✕
-            </button>
+            Close ✕
+          </button>
 
-            {/* Prev / Next */}
-            <button
-              onClick={(e) => { e.stopPropagation(); step(-1) }}
-              aria-label="Previous video"
-              className="absolute left-2 md:left-8 text-white text-3xl hover:opacity-60 transition-opacity z-10 px-2"
-            >
-              ‹
-            </button>
-            <button
-              onClick={(e) => { e.stopPropagation(); step(1) }}
-              aria-label="Next video"
-              className="absolute right-2 md:right-8 text-white text-3xl hover:opacity-60 transition-opacity z-10 px-2"
-            >
-              ›
-            </button>
+          {/* Prev / Next */}
+          <button
+            onClick={(e) => { e.stopPropagation(); step(-1) }}
+            aria-label="Previous video"
+            className="absolute left-2 md:left-8 text-white text-3xl hover:opacity-60 transition-opacity z-10 px-2"
+          >
+            ‹
+          </button>
+          <button
+            onClick={(e) => { e.stopPropagation(); step(1) }}
+            aria-label="Next video"
+            className="absolute right-2 md:right-8 text-white text-3xl hover:opacity-60 transition-opacity z-10 px-2"
+          >
+            ›
+          </button>
 
-            <div
-              className="w-full max-w-4xl"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <video
-                key={videos[selected].src}
-                src={videos[selected].src}
-                poster={videos[selected].poster}
-                controls
-                autoPlay
-                playsInline
-                preload="auto"
-                className="w-full aspect-video bg-black"
-              />
-              <div className="mt-4 flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="text-lg lg:text-xl text-white font-light">
-                    {videos[selected].title}
-                  </h3>
-                  <p className="text-xs text-gray-500 tracking-widest uppercase mt-1">
-                    {videos[selected].category}
-                  </p>
-                </div>
-                <span className="text-sm text-gray-600 whitespace-nowrap">
-                  {selected + 1} / {videos.length}
-                </span>
+          <div
+            className="w-full max-w-4xl"
+            onClick={(e) => e.stopPropagation()}
+            style={{ transform: 'translateZ(0)' }}
+          >
+            <video
+              id="active-modal-video"
+              key={videos[selected].src}
+              src={videos[selected].src}
+              poster={videos[selected].poster}
+              controls
+              autoPlay
+              playsInline
+              preload="metadata"
+              className="w-full aspect-video bg-black"
+              style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
+            />
+            <div className="mt-4 flex items-start justify-between gap-4">
+              <div>
+                <h3 className="text-lg lg:text-xl text-white font-light">
+                  {videos[selected].title}
+                </h3>
+                <p className="text-xs text-gray-500 tracking-widest uppercase mt-1">
+                  {videos[selected].category}
+                </p>
               </div>
+              <span className="text-sm text-gray-600 whitespace-nowrap">
+                {selected + 1} / {videos.length}
+              </span>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
