@@ -142,7 +142,7 @@ export function VideoGallery() {
               controls
               autoPlay
               playsInline
-              preload="metadata"
+              preload="auto"
               className="w-full aspect-video bg-black"
               style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
             />
