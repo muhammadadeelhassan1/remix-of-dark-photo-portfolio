@@ -44,7 +44,7 @@ export function Contact() {
           {...fadeInUp}
           className="mb-12 lg:mb-16 max-w-2xl"
         >
-          <h3 className="text-xl md:text-2xl lg:text-3xl text-white font-light leading-relaxed md:leading-snug lg:leading-tight mb-4">
+          <h3 className="text-xl md:text-2xl lg:text-3xl text-white font-light leading-[1.4] md:leading-snug lg:leading-tight mb-4">
             HAVE A WEBSITE,<br />
             AD CAMPAIGN, OR<br />
             VIDEO TO BUILD?
