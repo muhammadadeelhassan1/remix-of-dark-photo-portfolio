@@ -192,13 +192,13 @@ export function VideoGallery() {
             onClick={(e) => e.stopPropagation()}
             style={{ transform: 'translateZ(0)' }}
           >
-            {/* YouTube Responsive Embed Container with top title cropped */}
+            {/* YouTube Responsive Embed Container */}
             <div className="relative w-full aspect-video bg-black rounded-lg overflow-hidden shadow-2xl border border-gray-800">
               <iframe
                 key={selectedVideo.youtubeId}
-                src={`https://www.youtube-nocookie.com/embed/${selectedVideo.youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
+                src={`https://www.youtube-nocookie.com/embed/${selectedVideo.youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1&cc_load_policy=0&iv_load_policy=3`}
                 title={selectedVideo.title}
-                className="absolute -top-[55px] left-0 w-full h-[calc(100%+55px)] border-0"
+                className="w-full h-full border-0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
