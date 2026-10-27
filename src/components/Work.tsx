@@ -30,7 +30,7 @@ const experiences = [
     company: 'Freelance',
     location: 'Remote',
     period: '2023 — Present',
-    description: 'Editing a full library of 29+ kids\' educational videos — nursery rhymes, phonics lessons, and Urdu alphabet series. Alongside the edits, I design the logos, thumbnails, and social graphics that carry each release.',
+    description: "Editing a full library of kids' educational animations and videos — nursery rhymes, phonics lessons, and Urdu alphabet series. Alongside the edits, I design the logos, thumbnails, and social graphics that carry each release.",
     skills: ['Video Editing', 'Educational Content', 'Color Grading', 'Sound Design', 'Thumbnails', 'Logo & Branding'],
   },
 ]

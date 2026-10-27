@@ -1,41 +1,48 @@
-import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
-import { videos } from '@/data/videos'
+import { useEffect, useState, useMemo } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { videos, GalleryVideo } from '@/data/videos'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: '-100px' },
-  transition: { duration: 0.8, ease: 'easeOut' }
+  transition: { duration: 0.8, ease: 'easeOut' },
 }
 
 export function VideoGallery() {
-  const [selected, setSelected] = useState<number | null>(null)
+  const [selectedVideo, setSelectedVideo] = useState<GalleryVideo | null>(null)
+  const [activeCategory, setActiveCategory] = useState<string>('All')
+
+  // Extract unique categories
+  const categories = useMemo(() => {
+    const set = new Set<string>()
+    videos.forEach((v) => set.add(v.category))
+    return ['All', ...Array.from(set)]
+  }, [])
+
+  // Filtered list based on active category tab
+  const filteredVideos = useMemo(() => {
+    if (activeCategory === 'All') return videos
+    return videos.filter((v) => v.category === activeCategory)
+  }, [activeCategory])
+
+  const currentIndex = useMemo(() => {
+    if (!selectedVideo) return -1
+    return filteredVideos.findIndex((v) => v.id === selectedVideo.id)
+  }, [selectedVideo, filteredVideos])
 
   const close = () => {
-    const el = document.getElementById('active-modal-video') as HTMLVideoElement | null
-    if (el) {
-      try {
-        el.pause()
-      } catch {}
-    }
-    setSelected(null)
+    setSelectedVideo(null)
   }
 
   const step = (dir: 1 | -1) => {
-    const el = document.getElementById('active-modal-video') as HTMLVideoElement | null
-    if (el) {
-      try {
-        el.pause()
-      } catch {}
-    }
-    setSelected((current) =>
-      current === null ? null : (current + dir + videos.length) % videos.length
-    )
+    if (currentIndex === -1 || filteredVideos.length === 0) return
+    const nextIdx = (currentIndex + dir + filteredVideos.length) % filteredVideos.length
+    setSelectedVideo(filteredVideos[nextIdx])
   }
 
   useEffect(() => {
-    if (selected === null) return
+    if (!selectedVideo) return
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') close()
       if (e.key === 'ArrowRight') step(1)
@@ -43,7 +50,7 @@ export function VideoGallery() {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [selected])
+  }, [selectedVideo, currentIndex, filteredVideos])
 
   return (
     <section id="work" className="section-padding">
@@ -61,119 +68,174 @@ export function VideoGallery() {
           SELECTED<br />WORK
         </motion.h2>
 
-        <motion.p
+        <motion.div
           {...fadeInUp}
-          className="text-sm text-gray-500 tracking-widest uppercase mb-16 lg:mb-24"
+          className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10"
         >
-          {videos.length} videos — rhymes, phonics &amp; urdu alphabet lessons
-        </motion.p>
+          <p className="text-sm text-gray-500 tracking-widest uppercase">
+            {videos.length} Featured Animations — Rhymes, Phonics &amp; Urdu Lessons
+          </p>
+
+          {/* Category Filter Pills */}
+          <div className="flex flex-wrap gap-2">
+            {categories.map((cat) => {
+              const isActive = activeCategory === cat
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`px-3 py-1.5 text-xs uppercase tracking-widest transition-all rounded-full border ${
+                    isActive
+                      ? 'bg-white text-black border-white'
+                      : 'bg-black/40 text-gray-400 border-gray-800 hover:border-gray-600 hover:text-white'
+                  }`}
+                >
+                  {cat}
+                </button>
+              )
+            })}
+          </div>
+        </motion.div>
 
         {/* Video Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {videos.map((video, index) => (
-            <motion.button
-              key={video.src}
-              onClick={() => setSelected(index)}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.6, delay: (index % 3) * 0.1 }}
-              className="group text-left focus:outline-none"
-            >
-              <div className="relative overflow-hidden border border-gray-800 group-hover:border-gray-600 transition-colors">
-                <img
-                  src={video.poster}
-                  alt={video.title}
-                  loading="lazy"
-                  className="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                {/* Play overlay */}
-                <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="w-14 h-14 rounded-full border border-white flex items-center justify-center text-white text-xl pl-1">
-                    ▶
-                  </span>
+          <AnimatePresence>
+            {filteredVideos.map((video, index) => (
+              <motion.button
+                key={video.id}
+                layout
+                onClick={() => setSelectedVideo(video)}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
+                className="group text-left focus:outline-none block w-full"
+              >
+                <div className="relative overflow-hidden border border-gray-800 group-hover:border-gray-500 transition-colors bg-neutral-900 rounded-sm">
+                  <img
+                    src={video.poster}
+                    alt={video.title}
+                    loading="lazy"
+                    className="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  {/* Subtle Dark Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+
+                  {/* Play overlay button */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm border border-white/80 flex items-center justify-center text-white text-xl pl-1 shadow-lg transform group-hover:scale-110 transition-transform">
+                      ▶
+                    </span>
+                  </div>
+
+                  {/* HD Badge */}
+                  <div className="absolute top-2.5 right-2.5 px-2 py-0.5 bg-black/70 backdrop-blur-md rounded text-[10px] tracking-wider uppercase text-gray-300 border border-gray-800">
+                    1080p HD
+                  </div>
                 </div>
-              </div>
-              <div className="mt-3 flex items-start justify-between gap-3">
-                <div>
-                  <h3 className="text-base lg:text-lg text-white font-light group-hover:text-gray-300 transition-colors">
-                    {video.title}
-                  </h3>
-                  <p className="text-xs text-gray-500 tracking-widest uppercase mt-1">
-                    {video.category}
-                  </p>
+
+                <div className="mt-3 flex items-start justify-between gap-3">
+                  <div>
+                    <h3 className="text-base lg:text-lg text-white font-light group-hover:text-gray-300 transition-colors">
+                      {video.title}
+                    </h3>
+                    <p className="text-xs text-gray-500 tracking-widest uppercase mt-1">
+                      {video.category}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </motion.button>
-          ))}
+              </motion.button>
+            ))}
+          </AnimatePresence>
         </div>
       </div>
 
-      {/* Lightbox */}
-      {selected !== null && (
+      {/* Lightbox Modal */}
+      {selectedVideo && (
         <div
-          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-10 select-none"
+          className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-8 select-none"
           onClick={close}
           style={{ isolation: 'isolate' }}
         >
-          {/* Close */}
+          {/* Close button */}
           <button
             onClick={close}
             aria-label="Close video"
-            className="absolute top-4 right-4 md:top-8 md:right-8 text-white text-sm tracking-widest uppercase hover:opacity-60 transition-opacity z-10"
+            className="absolute top-4 right-4 md:top-8 md:right-8 text-white text-sm tracking-widest uppercase hover:opacity-60 transition-opacity z-20 px-3 py-1.5 rounded-full border border-gray-800 bg-black/50"
           >
             Close ✕
           </button>
 
-          {/* Prev / Next */}
-          <button
-            onClick={(e) => { e.stopPropagation(); step(-1) }}
-            aria-label="Previous video"
-            className="absolute left-2 md:left-8 text-white text-3xl hover:opacity-60 transition-opacity z-10 px-2"
-          >
-            ‹
-          </button>
-          <button
-            onClick={(e) => { e.stopPropagation(); step(1) }}
-            aria-label="Next video"
-            className="absolute right-2 md:right-8 text-white text-3xl hover:opacity-60 transition-opacity z-10 px-2"
-          >
-            ›
-          </button>
+          {/* Prev / Next buttons */}
+          {filteredVideos.length > 1 && (
+            <>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  step(-1)
+                }}
+                aria-label="Previous video"
+                className="absolute left-2 md:left-6 text-white text-4xl hover:opacity-60 transition-opacity z-20 p-3 rounded-full hover:bg-white/5"
+              >
+                ‹
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  step(1)
+                }}
+                aria-label="Next video"
+                className="absolute right-2 md:right-6 text-white text-4xl hover:opacity-60 transition-opacity z-20 p-3 rounded-full hover:bg-white/5"
+              >
+                ›
+              </button>
+            </>
+          )}
 
           <div
-            className="w-full max-w-4xl"
+            className="w-full max-w-5xl"
             onClick={(e) => e.stopPropagation()}
             style={{ transform: 'translateZ(0)' }}
           >
-            <video
-              id="active-modal-video"
-              key={videos[selected].src}
-              src={videos[selected].src}
-              poster={videos[selected].poster}
-              controls
-              autoPlay
-              playsInline
-              preload="auto"
-              onCanPlay={(e) => {
-                const el = e.currentTarget
-                if (el.paused) el.play().catch(() => {})
-              }}
-              className="w-full aspect-video bg-black"
-              style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
-            />
-            <div className="mt-4 flex items-start justify-between gap-4">
+            {/* YouTube Responsive Embed Container */}
+            <div className="relative w-full aspect-video bg-black rounded-lg overflow-hidden shadow-2xl border border-gray-800">
+              <iframe
+                key={selectedVideo.youtubeId}
+                src={`https://www.youtube-nocookie.com/embed/${selectedVideo.youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
+                title={selectedVideo.title}
+                className="w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+
+            {/* Video Metadata & Controls */}
+            <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-1">
               <div>
                 <h3 className="text-lg lg:text-xl text-white font-light">
-                  {videos[selected].title}
+                  {selectedVideo.title}
                 </h3>
                 <p className="text-xs text-gray-500 tracking-widest uppercase mt-1">
-                  {videos[selected].category}
+                  {selectedVideo.category}
                 </p>
               </div>
-              <span className="text-sm text-gray-600 whitespace-nowrap">
-                {selected + 1} / {videos.length}
-              </span>
+
+              <div className="flex items-center gap-4">
+                <a
+                  href={`https://youtu.be/${selectedVideo.youtubeId}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-gray-400 hover:text-white transition-colors underline underline-offset-4 tracking-wider uppercase"
+                >
+                  Watch on YouTube ↗
+                </a>
+
+                {currentIndex !== -1 && (
+                  <span className="text-xs text-gray-500 tracking-wider">
+                    {currentIndex + 1} / {filteredVideos.length}
+                  </span>
+                )}
+              </div>
             </div>
           </div>
         </div>
