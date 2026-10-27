@@ -127,11 +127,6 @@ export function VideoGallery() {
                       ▶
                     </span>
                   </div>
-
-                  {/* HD Badge */}
-                  <div className="absolute top-2.5 right-2.5 px-2 py-0.5 bg-black/70 backdrop-blur-md rounded text-[10px] tracking-wider uppercase text-gray-300 border border-gray-800">
-                    1080p HD
-                  </div>
                 </div>
 
                 <div className="mt-3 flex items-start justify-between gap-3">
@@ -197,13 +192,13 @@ export function VideoGallery() {
             onClick={(e) => e.stopPropagation()}
             style={{ transform: 'translateZ(0)' }}
           >
-            {/* YouTube Responsive Embed Container */}
+            {/* YouTube Responsive Embed Container with top title cropped */}
             <div className="relative w-full aspect-video bg-black rounded-lg overflow-hidden shadow-2xl border border-gray-800">
               <iframe
                 key={selectedVideo.youtubeId}
                 src={`https://www.youtube-nocookie.com/embed/${selectedVideo.youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
                 title={selectedVideo.title}
-                className="w-full h-full border-0"
+                className="absolute -top-[55px] left-0 w-full h-[calc(100%+55px)] border-0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />

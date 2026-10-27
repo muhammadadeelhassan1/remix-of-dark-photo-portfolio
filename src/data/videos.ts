@@ -1,14 +1,3 @@
-import t01 from '../assets/thumbnails/v01.jpg'
-import t02 from '../assets/thumbnails/v02.jpg'
-import t03 from '../assets/thumbnails/v03.jpg'
-import t04 from '../assets/thumbnails/v04.jpg'
-import t05 from '../assets/thumbnails/v05.jpg'
-import t06 from '../assets/thumbnails/v06.jpg'
-import t07 from '../assets/thumbnails/v07.jpg'
-import t08 from '../assets/thumbnails/v08.jpg'
-import t09 from '../assets/thumbnails/v09.jpg'
-import t10 from '../assets/thumbnails/v10.jpg'
-
 export interface GalleryVideo {
   id: string
   youtubeId: string
@@ -23,69 +12,69 @@ export const videos: GalleryVideo[] = [
     youtubeId: 'xd0revgyYrc',
     title: 'Urdu Alphabet — ض (Daad)',
     category: 'Urdu Alphabet',
-    poster: t01,
+    poster: 'https://i.ytimg.com/vi/xd0revgyYrc/hqdefault.jpg',
   },
   {
     id: 'fnBLK9y_4AA',
     youtubeId: 'fnBLK9y_4AA',
     title: "Kids' Animation — Enchanted Garden",
     category: "Kids' Animation",
-    poster: t02,
+    poster: 'https://i.ytimg.com/vi/fnBLK9y_4AA/hqdefault.jpg',
   },
   {
     id: 'BNBpTBWCx-M',
     youtubeId: 'BNBpTBWCx-M',
     title: 'What Can You Do — Rhyme',
     category: "Kids' Rhyme",
-    poster: t03,
+    poster: 'https://i.ytimg.com/vi/BNBpTBWCx-M/hqdefault.jpg',
   },
   {
     id: 'T6V5_6lSyGA',
     youtubeId: 'T6V5_6lSyGA',
     title: "Let's Learn Number 4! — Counting Rhyme",
     category: 'Counting & Math',
-    poster: t04,
+    poster: 'https://i.ytimg.com/vi/T6V5_6lSyGA/hqdefault.jpg',
   },
   {
     id: 'nsc8bLFOi6k',
     youtubeId: 'nsc8bLFOi6k',
     title: "Let's Learn Number 10! — Counting Rhyme",
     category: 'Counting & Math',
-    poster: t05,
+    poster: 'https://i.ytimg.com/vi/nsc8bLFOi6k/hqdefault.jpg',
   },
   {
     id: 'XKK1q987VTs',
     youtubeId: 'XKK1q987VTs',
     title: "Salam Salam — Islamic Kids' Greeting Song",
     category: "Kids' Rhyme",
-    poster: t06,
+    poster: 'https://i.ytimg.com/vi/XKK1q987VTs/hqdefault.jpg',
   },
   {
     id: 'uUClwtg0m2o',
     youtubeId: 'uUClwtg0m2o',
     title: "Tamatar — Kids' Urdu Rhyme",
     category: 'Urdu Rhyme',
-    poster: t07,
+    poster: 'https://i.ytimg.com/vi/uUClwtg0m2o/hqdefault.jpg',
   },
   {
     id: 'kti5LiYcJcU',
     youtubeId: 'kti5LiYcJcU',
     title: 'Alphabet Lesson — Letter D Phonics',
     category: 'Phonics & Alphabet',
-    poster: t08,
+    poster: 'https://i.ytimg.com/vi/kti5LiYcJcU/hqdefault.jpg',
   },
   {
     id: 'DTIaKTnG5Xk',
     youtubeId: 'DTIaKTnG5Xk',
     title: 'Phonics Lesson — Letter P Phonics',
     category: 'Phonics & Alphabet',
-    poster: t09,
+    poster: 'https://i.ytimg.com/vi/DTIaKTnG5Xk/hqdefault.jpg',
   },
   {
     id: 'inm8cXqLziU',
     youtubeId: 'inm8cXqLziU',
     title: 'Urdu Alphabet — ت (Tay) Phonics Lesson',
     category: 'Urdu Alphabet',
-    poster: t10,
+    poster: 'https://i.ytimg.com/vi/inm8cXqLziU/hqdefault.jpg',
   },
 ]
